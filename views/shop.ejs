@@ -1,0 +1,31 @@
+<%- include('includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/product.css" />
+<body>
+    <%- include('includes/navigation.ejs')%>
+
+    <main>
+        <% if (product.length > 0) { %>
+            <div class="grid">
+                <% for (let prod of product) { %>
+                    <article class="card  product-item">
+                        <header class="card_header">
+                            <h1 class="product_title"> <%= prod.title %> </h1>
+                        </header>
+                        <div class="card_image">
+                            <img src="https://media.npr.org/assets/img/2023/03/20/copy-of-lk_books_harlan-158_wide-aba40cd92c03a1d9c7674c39ae62430435456461-s1100-c50.jpg" alt="A book" />
+                        </div>
+                        <div class="card_content">
+                            <h2 class="product_price">$19.99</h2>
+                            <p class="product_description"> A very nice book</p>
+                        </div>
+                        <div class="card_actions">
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } else {%> 
+            <h1> No Products Found! </h1>
+        <% } %>
+    </main>
+<%- include('includes/end.ejs')%>
